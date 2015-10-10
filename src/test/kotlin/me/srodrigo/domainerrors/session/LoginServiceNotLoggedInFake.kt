@@ -1,6 +1,4 @@
-package me.srodrigo.domainerrors
-
-import me.srodrigo.domainerrors.LoginService
+package me.srodrigo.domainerrors.session
 
 class LoginServiceNotLoggedInFake : LoginService() {
 	override fun isLogged(): Boolean = false

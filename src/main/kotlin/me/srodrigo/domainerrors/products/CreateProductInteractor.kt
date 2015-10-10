@@ -1,4 +1,8 @@
-package me.srodrigo.domainerrors
+package me.srodrigo.domainerrors.products
+
+import me.srodrigo.domainerrors.Interactor
+import me.srodrigo.domainerrors.session.LoginService
+import me.srodrigo.domainerrors.session.NotLoggedError
 
 class CreateProductInteractor(private val loginService: LoginService, private val productValidator: ProductValidator)
 		: Interactor<CreateProductResponse> {

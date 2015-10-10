@@ -1,6 +1,6 @@
 package me.srodrigo.domainerrors
 
-import java.util.HashMap
+import java.util.*
 import java.util.concurrent.Future
 
 class InteractorExecution<T : InteractorResponse<out Any>>(val interactor: Interactor<T>,

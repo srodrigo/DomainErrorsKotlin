@@ -1,4 +1,4 @@
-package me.srodrigo.domainerrors
+package me.srodrigo.domainerrors.products
 
 interface CreateProductView {
 	fun showCreatedProduct()

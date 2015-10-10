@@ -1,6 +1,4 @@
-package me.srodrigo.domainerrors
-
-import me.srodrigo.domainerrors.CreateProductView
+package me.srodrigo.domainerrors.products
 
 class CreateProductViewSpy : CreateProductView {
 

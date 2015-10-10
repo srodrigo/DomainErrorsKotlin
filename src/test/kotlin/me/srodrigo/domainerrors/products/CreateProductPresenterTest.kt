@@ -1,6 +1,9 @@
-package me.srodrigo.domainerrors
+package me.srodrigo.domainerrors.products
 
-import me.srodrigo.domainerrors.*
+import me.srodrigo.domainerrors.InteractorInvoker
+import me.srodrigo.domainerrors.TestInteractorInvoker
+import me.srodrigo.domainerrors.session.LoginService
+import me.srodrigo.domainerrors.session.LoginServiceNotLoggedInFake
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
