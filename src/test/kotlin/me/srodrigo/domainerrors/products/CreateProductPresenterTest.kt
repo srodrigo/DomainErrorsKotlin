@@ -3,6 +3,7 @@ package me.srodrigo.domainerrors.products
 import me.srodrigo.domainerrors.InteractorInvoker
 import me.srodrigo.domainerrors.TestInteractorInvoker
 import me.srodrigo.domainerrors.session.LoginService
+import me.srodrigo.domainerrors.session.LoginServiceGenericErrorFake
 import me.srodrigo.domainerrors.session.LoginServiceNotLoggedInFake
 import org.junit.Assert
 import org.junit.Before
@@ -49,6 +50,14 @@ class CreateProductPresenterTest {
 		val presenter = createProductPresenter(loginService, productValidator)
 		presenter.onCreateProduct()
 		Assert.assertEquals(1, view.showNotLoggedErrorCalls)
+	}
+
+	@Test fun whenGenericErrorOccurs_showGenericError() {
+		val loginService = LoginServiceGenericErrorFake()
+		val productValidator = ProductValidator(Product())
+		val presenter = createProductPresenter(loginService, productValidator)
+		presenter.onCreateProduct()
+		Assert.assertEquals(1, view.showGenericErrorCalls)
 	}
 
 	private fun createProductPresenter(loginService: LoginService, productValidator: ProductValidator): CreateProductPresenter {

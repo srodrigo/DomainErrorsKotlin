@@ -14,6 +14,9 @@ class CreateProductViewSpy : CreateProductView {
 	var showNotLoggedErrorCalls = 0
 		private set
 
+	var showGenericErrorCalls = 0
+		private set
+
 	override fun showCreatedProduct() {
 		showCreatedProductCalls++
 	}
@@ -28,6 +31,10 @@ class CreateProductViewSpy : CreateProductView {
 
 	override fun showNotLoggedError() {
 		showNotLoggedErrorCalls++
+	}
+
+	override fun showGenericError() {
+		showGenericErrorCalls++;
 	}
 
 }
