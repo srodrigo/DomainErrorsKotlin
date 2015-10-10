@@ -1,8 +1,9 @@
 package me.srodrigo.domainerrors.products
 
-interface CreateProductView {
+import me.srodrigo.domainerrors.session.SessionView
+
+interface CreateProductView : SessionView {
 	fun showCreatedProduct()
 	fun showCreatedProductInvalidPriceError()
 	fun showCreatedProductInvalidQuantityError()
-	fun showNotLoggedError()
 }
