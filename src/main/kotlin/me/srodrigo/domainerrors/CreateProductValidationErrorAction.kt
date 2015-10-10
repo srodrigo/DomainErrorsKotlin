@@ -1,3 +1,5 @@
+package me.srodrigo.domainerrors
+
 class CreateProductValidationErrorAction(private val view: CreateProductView)
 		: InteractorErrorAction<CreateProductValidationError> {
 

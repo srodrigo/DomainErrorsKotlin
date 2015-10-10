@@ -1,3 +1,7 @@
+package me.srodrigo.domainerrors
+
+import me.srodrigo.domainerrors.CreateProductView
+
 class CreateProductViewSpy : CreateProductView {
 
 	var showCreatedProductCalls = 0

@@ -1,3 +1,6 @@
+package me.srodrigo.domainerrors
+
+import me.srodrigo.domainerrors.*
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test

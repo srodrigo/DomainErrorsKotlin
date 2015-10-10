@@ -1,3 +1,5 @@
+package me.srodrigo.domainerrors
+
 class CreateProductInteractor(private val loginService: LoginService, private val productValidator: ProductValidator)
 		: Interactor<CreateProductResponse> {
 

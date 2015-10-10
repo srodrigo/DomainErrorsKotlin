@@ -1,3 +1,9 @@
+package me.srodrigo.domainerrors
+
+import me.srodrigo.domainerrors.InteractorError
+import me.srodrigo.domainerrors.InteractorExecution
+import me.srodrigo.domainerrors.InteractorInvoker
+import me.srodrigo.domainerrors.InteractorResponse
 import java.util.concurrent.Future
 
 class TestInteractorInvoker : InteractorInvoker {

@@ -1,3 +1,5 @@
+package me.srodrigo.domainerrors
+
 class CreateProductPresenter(private val view: CreateProductView, private val invoker: InteractorInvoker,
                              private val createProductInteractor: CreateProductInteractor) {
 

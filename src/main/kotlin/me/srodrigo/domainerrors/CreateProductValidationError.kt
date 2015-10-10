@@ -1,3 +1,5 @@
+package me.srodrigo.domainerrors
+
 class CreateProductValidationError(val errorType: CreateProductValidationError.ErrorType) : InteractorError {
 	enum class ErrorType {
 		INVALID_QUANTITY,
