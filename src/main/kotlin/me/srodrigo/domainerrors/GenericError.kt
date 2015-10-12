@@ -1,3 +1,3 @@
 package me.srodrigo.domainerrors
 
-class GenericError : InteractorError
+class GenericError(val cause: Exception? = null) : InteractorError

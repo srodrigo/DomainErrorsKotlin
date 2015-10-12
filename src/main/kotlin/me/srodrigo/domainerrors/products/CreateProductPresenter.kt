@@ -16,7 +16,7 @@ class CreateProductPresenter(private val view: CreateProductView, private val in
 				})
 				.error(CreateProductValidationError::class.java, CreateProductValidationErrorAction(view))
 				.error(NotLoggedError::class.java, NotLoggedErrorAction(view))
-				.error(GenericError::class.java, GenericErrorAction(view))
+				.genericErrorAction(GenericErrorAction(view))
 				.execute(invoker)
 	}
 }

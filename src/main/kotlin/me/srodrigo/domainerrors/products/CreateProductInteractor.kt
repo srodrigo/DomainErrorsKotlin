@@ -21,7 +21,7 @@ class CreateProductInteractor(private val loginService: LoginService, private va
 
 			return CreateProductResponse(productValidator.product)
 		} catch (e: Exception) {
-			return CreateProductResponse(error = GenericError())
+			return CreateProductResponse(error = GenericError(e))
 		}
 	}
 }
