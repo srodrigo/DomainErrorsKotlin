@@ -25,11 +25,7 @@ class TestInteractorInvoker : InteractorInvoker {
 	private fun <T : InteractorResponse<out Any>> onErrorAction(execution: InteractorExecution<T>, response: T) {
 		val error: InteractorError = response.error!!
 		val errorAction = execution.getAction(error.javaClass)
-		if (errorAction != null) {
-			errorAction.onError(error)
-		} else {
-			doGenericErrorAction(execution, GenericError())
-		}
+		errorAction?.onError(error) ?: doGenericErrorAction(execution, GenericError())
 	}
 
 	private fun <T : InteractorResponse<out Any>> doGenericErrorAction(execution: InteractorExecution<T>,
