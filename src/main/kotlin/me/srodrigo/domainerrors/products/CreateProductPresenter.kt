@@ -9,11 +9,7 @@ class CreateProductPresenter(private val view: CreateProductView, private val in
 
 	fun onCreateProduct() {
 		InteractorExecution(interactor = createProductInteractor,
-				interactorResult = object : InteractorResult<CreateProductResponse> {
-					override fun onResult(result: CreateProductResponse) {
-						view.showCreatedProduct()
-					}
-				})
+				interactorResult = CreateProductResultAction(view))
 				.error(CreateProductValidationError::class.java, CreateProductValidationErrorAction(view))
 				.error(NotLoggedError::class.java, NotLoggedErrorAction(view))
 				.genericErrorAction(GenericErrorAction(view))
