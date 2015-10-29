@@ -1,7 +1,33 @@
 package me.srodrigo.domainerrors
 
 import java.util.*
+import java.util.concurrent.Callable
 import java.util.concurrent.Future
+
+interface Interactor<T> : Callable<T> {
+	override fun call(): T
+}
+
+interface InteractorResult<T> {
+	fun onResult(result: T)
+}
+
+interface InteractorError
+
+class GenericError(val cause: Exception? = null) : InteractorError
+
+interface InteractorErrorAction<T : InteractorError> {
+	fun onError(error: T)
+}
+
+open class InteractorResponse<T>(val response: T?, val error: InteractorError?) {
+
+	fun hasError(): Boolean = error != null
+}
+
+interface InteractorInvoker {
+	fun <T : InteractorResponse<out Any>> execute(execution: InteractorExecution<T>): Future<T>?
+}
 
 class InteractorExecution<T : InteractorResponse<out Any>>(val interactor: Interactor<T>,
                                                            val interactorResult: InteractorResult<T>) {
